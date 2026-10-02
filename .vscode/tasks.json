@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "C:/msys64/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-Wextra",
+                "-std=gnu++14",
+                "${workspaceFolder}/main.cpp",
+                "-o",
+                "${workspaceFolder}/a.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Сборка через MSYS2 MinGW-w64 g++"
+        }
+    ]
+}
