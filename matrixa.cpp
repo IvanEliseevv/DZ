@@ -8,18 +8,18 @@ int main(){
     if (matrix == nullptr){
         return 2;
     }
-    for (int i = 0; i < strok;++i){
+    for (size_t i = 0; i < strok; ++i){
         matrix[i] = new(std::nothrow) int[stlb];
         if (matrix[i] == nullptr){
-            for (int j = 0; j < i; ++j){
+            for (size_t j = 0; j < i; ++j){
                 delete[] matrix[j];
             }
             delete[] matrix;
             return 2;
         }
-        for (int j = 0; j < stlb; ++j) {
+        for (size_t j = 0; j < stlb; ++j) {
             if (!(std::cin >> matrix[i][j])) {
-                for (int k = 0; k <= i; ++k) {
+                for (size_t k = 0; k <= i; ++k) {
                     delete[] matrix[k];
                 }
                 delete[] matrix;
@@ -27,13 +27,13 @@ int main(){
             }
         }
     }
-    for (int j = 0; j < stlb; ++j) {
-        for (int i = 0; i < strok; ++i) {
+    for (size_t j = 0; j < stlb; ++j) {
+        for (size_t i = 0; i < strok; ++i) {
             std::cout << matrix[i][j] << " ";
         }
         std::cout << "\n";
         }
-    for (int i = 0; i < strok; ++i) {
+    for (size_t i = 0; i < strok; ++i) {
         delete[] matrix[i];
     }
     delete[] matrix;
