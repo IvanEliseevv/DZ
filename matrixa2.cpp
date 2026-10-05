@@ -11,8 +11,10 @@ int debil(int& stlb, int& strok)
 int** sozdmatrix(int strok, int stlb)
 {
     int** matrix = new (std::nothrow) int*[strok];
-    if (matrix == nullptr) return nullptr;
-
+    if (matrix == nullptr)
+    {
+        return nullptr;
+    }
     for (int i = 0; i < strok; ++i)
     {
         matrix[i] = new (std::nothrow) int[stlb];
@@ -54,7 +56,7 @@ int main()
             std::cout << matrix[i][j] << " ";
         }
         std::cout << "\n";
-        }
+    }
     for (size_t i = 0; i < strok; ++i)
     {
         delete[] matrix[i];
