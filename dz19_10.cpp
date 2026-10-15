@@ -107,8 +107,8 @@ int main()
                 deleteMatrix(rhs, n2);
                 return 1;
             }
-    int** result = concat_rows(const_cast<const int* const*>(lhs), n1, m1, const_cast<const int* const*>(rhs), n2, m2);
-    if (result == nullptr)
+    int** matrix = concat_rows(const_cast<const int* const*>(lhs), n1, m1, const_cast<const int* const*>(rhs), n2, m2);
+    if (matrix == nullptr)
     {
         deleteMatrix(lhs, n1);
         deleteMatrix(rhs, n2);
@@ -120,12 +120,12 @@ int main()
     {
         for (size_t j = 0; j < mat_cols; ++j)
         {
-            std::cout << result[i][j] << " ";
+            std::cout << matrix[i][j] << " ";
         }
         std::cout << "\n";
     }
     deleteMatrix(lhs, n1);
     deleteMatrix(rhs, n2);
-    deleteMatrix(result, mat_rows);
+    deleteMatrix(matrix, mat_rows);
     return 0;
 }
